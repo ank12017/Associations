@@ -1,0 +1,16 @@
+
+<%= search_form_for @q do |f| %>
+  <%= f.label :name_cont %>
+  <%= f.search_field :name_cont %>
+  <%= f.submit %>
+<% end %>
+
+<%= paginate @books %>
+
+<% @books.each do |book| %>
+<%= book.name %><br>
+<% end %>
+
+
+
+

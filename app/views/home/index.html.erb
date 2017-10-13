@@ -1,0 +1,31 @@
+<h1>Home</h1>
+
+<div class="input-group">
+   <%= form_tag home_index_path, :method => 'get'  do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search books", class: 'form-control' %>
+       <span class="input-group-btn">
+        <%= submit_tag "Search", class: 'btn btn-success' %>
+       </span>
+    <% end %>
+   </form>
+</div>
+
+<br>
+<%= paginate @books %>
+<% @books.each do |book| %>
+<%= book.name %><br>
+<% end %>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
