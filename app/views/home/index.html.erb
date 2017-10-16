@@ -11,10 +11,11 @@
 </div>
 
 <br>
-<%= paginate @books %>
-<% @books.each do |book| %>
-<%= book.name %><br>
-<% end %>
+<%= paginate @books %><br>
+
+	<% @books.each do |book| %>
+		<%= book.name %><br>
+	<% end %>
 
 
     

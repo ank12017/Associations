@@ -15,8 +15,8 @@ class BooksController < ApplicationController
 	  def create
         @book = Book.new(book_params)
 
-        AuthorMailer.welcome_email(@book.author).deliver_now
             if @book.save
+                AuthorMailer.welcome_email(@book.author).deliver_now
                redirect_to @book
             else
                render 'new'
@@ -32,7 +32,8 @@ class BooksController < ApplicationController
 	  end
     def destroy
 	    @book = Book.find(params[:id])
-	    @book.destroy
+       @book.destroy
+       AuthorMailer.destroy_email(@book.author).deliver_now
 	      redirect_to books_path
     end
     private

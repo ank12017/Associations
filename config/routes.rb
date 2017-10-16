@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+
+ 
+  devise_for :users
   get 'home/index'
   root 'home#index'
   
 resources :books
-resources :auhtors
+resources :authors
 
   
 end

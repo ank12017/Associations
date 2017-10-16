@@ -1,0 +1,12 @@
+<% @authors.each do |author| %>
+	<strong>Name:</strong>
+	<td><%= author.name %></td>
+	<strong>country:</strong>
+	<td><%= author.country %></td>
+	<strong>Email:</strong>
+	<td><%= author.email %></td>
+	<strong>Author_id:</strong>
+	<td><%= author.id %></td><br>
+	<td><%= link_to 'Show', author_path(author) %></td>
+	<td><%= link_to 'Delete', author_path(author),method: :delete %></td><br>
+<% end %>

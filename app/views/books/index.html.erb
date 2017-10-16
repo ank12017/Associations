@@ -1,22 +1,20 @@
-<h1>Listing books</h1>
+<h1>Listing Books</h1>
 
 <%= search_form_for @q do |f| %>
   <%= f.label :name_cont %>
   <%= f.search_field :name_cont %>
   <%= f.submit %>
 <% end %>
-<table>
-  <tr>
-    <th>Book name</th>
-  </tr>
- 
-  <% @books.each do |book| %>
-    <tr>
-      <td><%= book.name %></td><br>
-      <td><%= link_to 'Show', book_path(book) %></td>
-    </tr>
-  <% end %>
-</table>
+    <tr>  
+    <th>Book Name</th></tr><br>
+     <% @books.each do |book| %>
+        <tr>
+          <td><%= book.name %></td>
+            <td><%= link_to 'Show', book_path(book) %></td>
+            <td><%= link_to 'Delete', book_path(book),method: :delete %></td><br>
+        </tr>
+     <% end %>
+
 <%= paginate @books %>
 
-<%= link_to 'New Book', new_book_path %>
+<h1><%= link_to 'New Book', new_book_path %></h1>
