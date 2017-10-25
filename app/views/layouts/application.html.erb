@@ -21,7 +21,7 @@
       <% if user_signed_in? %>
          <listyle style="color: black;">Logged in as <strong><%= current_user.email %></strong></li>
            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %><span class="glyphicon glyphicon-log-out"></span> </li>
-      
+      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
       <% else %>
           <li><span class="glyphicon glyphicon-user"><%= link_to 'SignUp', new_user_registration_path %></span></li>
           <li><span class="glyphicon glyphicon-log-in"><%= link_to 'LogIn', new_user_session_path %></span></li>
